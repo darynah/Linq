@@ -6,15 +6,17 @@
 
 void Main()
 
-//*scope: 
-//airpm - desktop; -momile; 
-//EventType: 1 - prematch, 3 - soon, 2 - live, 
+//scope: 
+//airpm - desktop; -mobile; 
+//EventType: 1 - prematch, 3 - soon, 2 - live, check the test without EventType parameter
 {
     var http = new System.Net.Http.HttpClient();
-    var response = http.GetStringAsync("https://sport3.betlab.com/inner-feed-wrapper-prematch-airpm/").Result;
+    var response = http.GetStringAsync("https://sport.betlab.com/inner-feed-wrapper-prematch-airpm/").Result;
 	//var response = http.GetStringAsync("https://sport3.betlab.com/inner-feed-wrapper-prematch/").Result;
 	//var response = http.GetStringAsync("https://sport3.betlab.com/inner-feed-wrapper-live/").Result;
 	//var response = http.GetStringAsync("https://sport3.betlab.com/inner-feed-wrapper-airpm/").Result;
+	//var response = http.GetStringAsync("https://sport3.betlab.com/inner-feed-wrapper-virtual-sports/").Result;
+	//var response = http.GetStringAsync("https://sport3.betlab.com/inner-feed-wrapper-virtual-sports-airpm/").Result;
     var eventsList = JsonConvert.DeserializeObject<Dto>(response);
 	
 	var Responce = (
